@@ -9,7 +9,7 @@
 </div> -->
 <form [formGroup]="profileForm">
 <input type = "text" formControlName ="textBox">
-<button (click)= "updateName()">Update Name</button>
+<button (click)= "updateName()">Update Name</button> {{profileForm.get('textBox').value}}
 </form>
 <table>
   <div *ngFor= "let nme of names">
