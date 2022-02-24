@@ -1,0 +1,26 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<!-- <input type= "text" [(ngModel)]= "typedName"> -->
+<!-- <div *ngFor= "let name of names">
+  {{name}}
+</div> -->
+<form>
+<input type = "text" [formControl] ="textBox">
+<button (click)= "updateName()">Update Name</button>
+{{textBox.value}}
+</form>
+<table>
+  <div *ngFor= "let nme of names">
+<td>  
+  <tr>{{nme.firstName}}</tr>
+</td>
+<td>
+<tr>{{nme.lastName}}</tr>
+</td>
+  </div>
+</table>
+
+<!-- <div *ngIf = "visibleName !=''">{{visibleName}}</div> -->
