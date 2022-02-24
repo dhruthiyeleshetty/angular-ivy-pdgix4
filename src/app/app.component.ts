@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit, VERSION } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -7,10 +7,14 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  constructor(private fb : FormBuilder){}
   name = 'Angular ' + VERSION.major;
   typedName;
   public visibleName = '';
-  textBox= new FormControl('');
+  // textBox= new FormControl('');
+  profileForm = new FormGroup({
+    textBox: new FormControl('')
+  })
   public names = [
     {
       firstName: 'Dhruthi',
@@ -22,7 +26,7 @@ export class AppComponent {
     },
   ];
   updateName(){
-    this.textBox.setValue("Dhruthi");
+    // this.textBox.setValue("Dhruthi");
   }
   // onKeyInput(event) {
   //   // console.log(event.target.value as HTMLInputElement);

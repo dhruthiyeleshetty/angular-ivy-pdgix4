@@ -7,10 +7,9 @@
 <!-- <div *ngFor= "let name of names">
   {{name}}
 </div> -->
-<form>
-<input type = "text" [formControl] ="textBox">
+<form [formGroup]="profileForm">
+<input type = "text" formControlName ="textBox">
 <button (click)= "updateName()">Update Name</button>
-{{textBox.value}}
 </form>
 <table>
   <div *ngFor= "let nme of names">
