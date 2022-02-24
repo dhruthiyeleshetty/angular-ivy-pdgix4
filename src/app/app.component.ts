@@ -35,12 +35,14 @@ export class AppComponent {
     // if(this.profileForm.get('textBox').value.includes){
     //   // this.profileForm.get('textBox').setValue('Dhruthi');
     // };
+    let arrayList = [];
     let enteredVal = this.profileForm.get('textBox').value;
     this.names.filter((nm) => {
-      if (nm.firstName.includes('D')) {
+      if (nm.firstName.includes(enteredVal)) {
         console.log(nm);
         this.filteredNameList.push(nm);
-        // console.log(this.filteredNameList);
+        console.log(this.filteredNameList);
+      } else {
       }
       // console.log(this.filteredNameList);
     });

@@ -1,24 +1,31 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
 
 <!-- <input type= "text" [(ngModel)]= "typedName"> -->
 <!-- <div *ngFor= "let name of names">
   {{name}}
 </div> -->
 <form [formGroup]="profileForm">
-<input type = "text" formControlName ="textBox" (input)= "enteredInput()">
-<button (click)= "updateName()">Update Name</button> {{profileForm.get('textBox').value}}
+  <input type="text" formControlName="textBox" (input)="enteredInput()" />
+  <button (click)="updateName()">Update Name</button>
+  {{ profileForm.get('textBox').value }}
 </form>
 <table>
-  <div *ngFor= "let nme of names">
-<td>  
-  <tr>{{nme.firstName}}</tr>
-</td>
-<td>
-<tr>{{nme.lastName}}</tr>
-</td>
+  <div *ngFor="let nme of filteredNameList">
+    <td>
+      <tr>
+        {{
+          nme.firstName
+        }}
+      </tr>
+    </td>
+    <td>
+      <tr>
+        {{
+          nme.lastName
+        }}
+      </tr>
+    </td>
   </div>
 </table>
 
