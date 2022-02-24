@@ -8,7 +8,7 @@
   {{name}}
 </div> -->
 <form [formGroup]="profileForm">
-<input type = "text" formControlName ="textBox">
+<input type = "text" formControlName ="textBox" (input)= "enteredInput()">
 <button (click)= "updateName()">Update Name</button> {{profileForm.get('textBox').value}}
 </form>
 <table>
